@@ -1,0 +1,22 @@
+<!--<%= form_with scope: :player, url: players_path,method: "get", local: true do |form| %>
+  <<%= label_tag("Выбор: ") %>
+<%= select(:message,:@name, options_for_select([['Первое', 1], ['Второе', 2], ['третье', 3]],1)) %>
+<%= label_tag("Количество: ") %>
+<%= text_field_tag(:@name) %>
+<%= submit_tag("Считать") %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>-->
+<%= form_tag(players_path, method: :get) do %> 
+  <p>
+    <%= text_field_tag :name, params[:name] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
