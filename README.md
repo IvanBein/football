@@ -1,24 +1,18 @@
 # README
+Веб приложение, позволяющее динамически настраивать фильтры по таблице
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Дана таблица игроков (Player) по футболу: id(int), name(text), goals(int), ready(boolean)
 
-Things you may want to cover:
+Скрипт, который может наполнить базу тестовыми данными.
+Страницу с формой добавления условий для выборки: условие состоит из 3х полей - наименование поля, операция и значение.
 
-* Ruby version
+Варианты операций
+- для числа: <, =, > и текстовое поле для числа; 
+- для bool - только equal + <select> с выбором из 3х вариантов (true/false/-),
+- для text: starts_with (начинается, like “...%”), equal (равно)) и текстовое поле
+	
+Условие может фигурировать в 1 или обоих секциях AND/OR. Если значение пустое - не учитывается этот фильтр (для bool это третий, пустой вариант.
+Поле Id - не фильтруется, просто для сортировки, всегда ASC
+Под формой в табличном виде выводятся строчки отвечающие заданным условиям, с лимитом 20
+По умолчанию никаких условий не накладывается, показываются первые 20 строк
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
